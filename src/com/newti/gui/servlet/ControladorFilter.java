@@ -1,18 +1,27 @@
 package com.newti.gui.servlet;
 
-import com.newti.gui.acao.*;
+import com.newti.gui.acao.Acao;
 
 import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-//WebServlet(name = "UnicaEntradaServlet", value = "/UnicaEntradaServlet")
-public class UnicaEntradaServlet extends HttpServlet {
+//@WebFilter("/UnicaEntradaServlet")
+public class ControladorFilter implements Filter {
+    public void init(FilterConfig config) throws ServletException {
+    }
+
+    public void destroy() {
+    }
 
     @Override
-    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void doFilter(ServletRequest ServletRequest, ServletResponse ServletResponse, FilterChain chain) throws ServletException, IOException {
 
+        System.out.println("Controlador");
+        HttpServletRequest request = (HttpServletRequest)ServletRequest;
+        HttpServletResponse response = (HttpServletResponse)ServletResponse;
         String paramAcao = request.getParameter("acao");
 
         String nome = null;
@@ -35,4 +44,3 @@ public class UnicaEntradaServlet extends HttpServlet {
             response.sendRedirect(tipoEEndereco[1]);
     }
 }
-

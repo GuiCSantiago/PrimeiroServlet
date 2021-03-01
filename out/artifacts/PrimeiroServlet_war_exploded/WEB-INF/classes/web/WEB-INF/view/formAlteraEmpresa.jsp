@@ -12,6 +12,8 @@
     <body>
     <form action="${linkServletNovaEmpresa}" method="POST">
 
+        <c:import url="logout-parcial.jsp"/>
+
         Nome: <input type="text" name="name" value="${empresa.nome}"/>
         Data de Abertura: <input type="text"  name="data" value="<fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"/>"/>
         <input type="hidden" name="id" value="${empresa.id}">

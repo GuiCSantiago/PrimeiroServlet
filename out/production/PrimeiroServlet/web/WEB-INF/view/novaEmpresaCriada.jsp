@@ -5,6 +5,7 @@
     <title>Cadastro</title>
 </head>
 <body>
+<c:import url="logout-parcial.jsp"/>
 
     <c:if test="${not empty empresa}">
         Empresa ${empresa} Cadastrada com sucesso!
