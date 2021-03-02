@@ -24,8 +24,8 @@ public class Login implements Acao{
         if(usuario!=null) {
             HttpSession sessao = request.getSession();
             sessao.setAttribute("usuariologado",usuario);
-            return "redirect: UnicaEntradaServlet?acao=ListarEmpresas";
+            return "redirect:UnicaEntradaServlet?acao=ListarEmpresas";
         }
-        return  "redirect: UnicaEntradaServlet?acao=LoginForm";
+        return  "redirect:UnicaEntradaServlet?acao=LoginForm";
     }
 }
